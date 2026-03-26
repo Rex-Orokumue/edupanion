@@ -1,2 +1,0 @@
-f9c19ff feat: implement AI insights screen to visualize student assessment trends and display AI-generated diagnosis.
-e7ff618 feat: Initial project setup for the Edupanion application, including core features, UI, and multi-platform configurations.
