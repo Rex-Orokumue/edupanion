@@ -1,0 +1,78 @@
+name: edupanion
+description: "EduPanion is a smart phonics and literacy assessment tool for teachers. Track student progress across six learning levels, run structured weekly assessments, and get actionable insights — all designed for the Nigerian classroom."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  shared_preferences: ^2.3.0
+  
+  # ── State & Storage ────────────────────────────────────────────────────────
+  provider: ^6.0.5
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+
+  # ── Backend ────────────────────────────────────────────────────────────────
+  supabase_flutter: ^2.12.0
+
+  # ── Utilities ──────────────────────────────────────────────────────────────
+  uuid: ^4.2.1
+  path_provider: ^2.1.5
+  connectivity_plus: ^7.0.0
+  http: ^1.6.0
+
+  # ── UI & Media ─────────────────────────────────────────────────────────────
+  cupertino_icons: ^1.0.8
+  fl_chart: ^1.1.1
+  flutter_markdown: ^0.7.7+1
+  audioplayers: ^5.2.1
+  flutter_tts: ^4.2.5
+
+  # ── PDF / Reports ──────────────────────────────────────────────────────────
+  pdf: ^3.11.3
+  printing: ^5.14.2
+
+  # ── Splash screen (native OS layer, shown before Flutter engine starts) ────
+  flutter_native_splash: ^2.4.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  hive_generator: ^2.0.1
+  build_runner: ^2.4.6
+
+  # ── App icon generator ─────────────────────────────────────────────────────
+  flutter_launcher_icons: ^0.13.1
+
+# ── App Icon config ────────────────────────────────────────────────────────────
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon/app_icon.png"
+  adaptive_icon_background: "#1B4332"
+  adaptive_icon_foreground: "assets/icon/app_icon_foreground.png"
+  remove_alpha_ios: true
+
+# ── Native Splash config ───────────────────────────────────────────────────────
+flutter_native_splash:
+  color: "#1B4332"
+  image: assets/splash/splash_logo.png
+  fullscreen: true
+  android_12:
+    image: assets/splash/splash_logo.png
+    color: "#1B4332"
+    icon_background_color: "#2D6A4F"
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/icon/
+    - assets/splash/
