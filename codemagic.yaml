@@ -5,8 +5,18 @@ workflows:
 
     environment:
       flutter: stable
+      vars:
+        GROQ_API_KEY: Encrypted(...)       # Set in Codemagic UI
+        SUPABASE_URL: Encrypted(...)       # Set in Codemagic UI
+        SUPABASE_ANON_KEY: Encrypted(...)  # Set in Codemagic UI
 
     scripts:
+      - name: Create .env from CI secrets
+        script: |
+          echo "GROQ_API_KEY=$GROQ_API_KEY" > .env
+          echo "SUPABASE_URL=$SUPABASE_URL" >> .env
+          echo "SUPABASE_ANON_KEY=$SUPABASE_ANON_KEY" >> .env
+
       - name: Install dependencies
         script: flutter pub get
 

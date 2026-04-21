@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -20,9 +21,12 @@ final GlobalKey<NavigatorState> appNavigatorKey = GlobalKey<NavigatorState>();
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  // Load environment variables from the bundled .env asset
+  await dotenv.load(fileName: '.env');
+
   await Supabase.initialize(
-    url: 'https://brodyivxdgtjuhzqbhpa.supabase.co',
-    anonKey: 'sb_publishable_LLlxkVzriGP0eLtn2T2ImA_FHqzTp_D',
+    url: dotenv.env['SUPABASE_URL']!,
+    anonKey: dotenv.env['SUPABASE_ANON_KEY']!,
   );
 
   await Hive.initFlutter();

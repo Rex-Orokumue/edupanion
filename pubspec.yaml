@@ -40,6 +40,7 @@ dependencies:
 
   # ── Splash screen (native OS layer, shown before Flutter engine starts) ────
   flutter_native_splash: ^2.4.0
+  flutter_dotenv: ^6.0.1
 
 dev_dependencies:
   flutter_test:
@@ -74,5 +75,6 @@ flutter:
   uses-material-design: true
 
   assets:
+    - .env
     - assets/icon/
     - assets/splash/

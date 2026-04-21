@@ -1,10 +1,11 @@
 import 'dart:convert';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import '../models/student.dart';
 import '../models/assessment.dart';
 
 class AiService {
-  static const String _apiKey = String.fromEnvironment('GROQ_API_KEY', defaultValue: '');
+  static String get _apiKey => dotenv.env['GROQ_API_KEY'] ?? '';
   static const String _apiUrl = 'https://api.groq.com/openai/v1/chat/completions';
   static const String _model = 'llama-3.3-70b-versatile';
 
